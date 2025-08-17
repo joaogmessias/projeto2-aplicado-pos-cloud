@@ -78,7 +78,7 @@ resource "aws_instance" "ec2" {
               const port = 80;
               const server = http.createServer((req, res) => {
                 res.writeHead(200, {'Content-Type': 'text/plain'});
-                res.end('Pós em Cloud');
+                res.end('Pos em Cloud');
               });
               server.listen(port, () => {
                 console.log("Servidor rodando na porta " + port);
@@ -94,15 +94,3 @@ resource "aws_instance" "ec2" {
   }
 }
 
-#resource "aws_instance" "ec2" {
-#  ami                         = data.aws_ami.ubuntu.id
-#  instance_type               = var.instance_type
-#  key_name                    = var.key_name
-#  vpc_security_group_ids      = [aws_security_group.ec2_sg.id]
-#  subnet_id                   = element(data.aws_subnets.default.ids, 0)
-#  associate_public_ip_address = true
-
-#  tags = {
-#    Name = var.instance_name
-#  }
-#}
