@@ -1,8 +1,3 @@
-provider "aws" {
-  alias  = "replica"
-  region = var.replica_region
-}
-
 # Bucket de origem (já existente)
 resource "aws_s3_bucket" "source" {
   bucket = var.source_bucket_name
