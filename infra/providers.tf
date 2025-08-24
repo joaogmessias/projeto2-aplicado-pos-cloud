@@ -12,3 +12,9 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+
+
+provider "aws" {
+  alias   = "replica"
+  region  = "us-west-2" # Ajuste para a região correta da réplica
+}
