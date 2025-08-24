@@ -16,7 +16,7 @@ resource "aws_s3_bucket_versioning" "source_versioning" {
 # Bucket de destino (replica)
 resource "aws_s3_bucket" "replica" {
   provider = aws.replica
-  
+  force_destroy = true
   bucket   = var.replica_bucket_name
 }
 
