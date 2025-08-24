@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ec2","Source":"./modules/ec2","Dir":"modules/ec2"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"ec2","Source":"./modules/ec2","Dir":"modules/ec2"},{"Key":"s3_bucket_crr","Source":"./modules/s3_bucket_crr","Dir":"modules/s3_bucket_crr"},{"Key":"s3_bucket_crr.s3_bucket_crr","Source":"./modules/s3-bucket-crr","Dir":"modules/s3_bucket_crr/modules/s3-bucket-crr"},{"Key":"s3_bucket_crr.s3_bucket_crr.s3_bucket_crr","Source":"./modules/s3-bucket-crr","Dir":""}]}

@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "terraform-techdev"      # bucket que você já tem
+    bucket         = "terraform-techdev"      # bucket 
     key            = "ec2/terraform.tfstate"  # caminho do state
     region         = "sa-east-1"
-    dynamodb_table = "terraform-locks"        # crie a tabela antes
+    dynamodb_table = "terraform-locks"        
     encrypt        = true
   }
 }

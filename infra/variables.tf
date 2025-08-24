@@ -17,6 +17,6 @@ variable "ec2_key_name" {
 variable "ec2_instance_type" {
   description = "Tipo da instância EC2"
   type        = string
-  default     = "t2.micro"
+  default     = "t2.micro" #tipo de ainstancia
 }
 
