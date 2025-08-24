@@ -31,7 +31,7 @@ resource "aws_s3_bucket_versioning" "replica_versioning" {
 
 # IAM Role para replicação
 resource "aws_iam_role" "replication_role" {
-  name = "s3-replication-role"
+  name = "s3-replication-role-${random_id.suffix.hex}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
