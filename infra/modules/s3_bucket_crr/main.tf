@@ -8,7 +8,6 @@ resource "aws_s3_bucket" "source" {
 # Ativa o versionamento no bucket de origem
 resource "aws_s3_bucket_versioning" "source_versioning" {
   bucket = aws_s3_bucket.source.id
-  force_destroy = true
   versioning_configuration {
     status = "Enabled"
   }
