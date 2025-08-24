@@ -1,7 +1,4 @@
-provider "aws" {
-  alias  = "us"
-  region = "us-east-1"
-}
+
 # Bucket de origem (já existente)
 resource "aws_s3_bucket" "source" {
   bucket = var.source_bucket_name
@@ -88,7 +85,7 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
   bucket = aws_s3_bucket.source.id
   role   = aws_iam_role.replication_role.arn
 
-  rules {
+  rule {
     id     = "replicate-to-us-east-1"
     status = "Enabled"
 
