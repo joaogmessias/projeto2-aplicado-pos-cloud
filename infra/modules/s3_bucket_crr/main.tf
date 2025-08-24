@@ -1,12 +1,14 @@
 
 # Bucket de origem (já existente)
 resource "aws_s3_bucket" "source" {
-  bucket = var.source_bucket_name
+   bucket = var.source_bucket_name
+   force_destroy = true
 }
 
 # Ativa o versionamento no bucket de origem
 resource "aws_s3_bucket_versioning" "source_versioning" {
   bucket = aws_s3_bucket.source.id
+  force_destroy = true
   versioning_configuration {
     status = "Enabled"
   }
