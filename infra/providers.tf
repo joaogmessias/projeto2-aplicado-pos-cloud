@@ -16,3 +16,7 @@ provider "aws" {
   alias  = "replica"
   region = var.replica_region
 }
+
+provider "aws" {
+  region = "sa-east-1"
+}
