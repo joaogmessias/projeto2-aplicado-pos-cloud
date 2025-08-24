@@ -18,5 +18,6 @@ provider "aws" {
 }
 
 provider "aws" {
-  region = "sa-east-1"
+  alias   = "replica"
+  region  = "us-west-2" # Ajuste para a região correta da réplica
 }
