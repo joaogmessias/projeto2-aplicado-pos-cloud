@@ -31,7 +31,7 @@ resource "aws_s3_bucket_versioning" "replica_versioning" {
 
 # IAM Role para replicação
 resource "aws_iam_role" "replication_role" {
-  name = "s3-replication-role-${random_id.suffix.hex}"
+  name = "s3-replication-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -93,6 +93,19 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
 
     filter {
       prefix = "" # Replica todos os objetos
+    }
+
+    destination {
+      bucket        = aws_s3_bucket.replica.arn
+      storage_class = "STANDARD"
+    }
+  }
+  rule {
+    id     = "replicate-all"
+    status = "Enabled"
+
+    delete_marker_replication {
+      status = "Enabled"
     }
 
     destination {
