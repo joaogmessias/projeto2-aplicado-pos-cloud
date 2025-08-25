@@ -94,17 +94,8 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
     filter {
       prefix = "" # Replica todos os objetos
     }
-
-    destination {
-      bucket        = aws_s3_bucket.replica.arn
-      storage_class = "STANDARD"
-    }
-  }
-  rule {
-    id     = "replicate-all"
-    status = "Enabled"
-
-    delete_marker_replication {
+    
+     delete_marker_replication {
       status = "Enabled"
     }
 
@@ -113,4 +104,5 @@ resource "aws_s3_bucket_replication_configuration" "replication" {
       storage_class = "STANDARD"
     }
   }
+  
 }
